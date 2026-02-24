@@ -1,0 +1,5 @@
+venv/
+__pycache__/
+chrome-linux64/
+chrome-linux64.zip
+*.so
