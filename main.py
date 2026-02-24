@@ -1,4 +1,4 @@
-from dash import Dash, dcc, html
+from dash import dcc, html
 from dash.dependencies import Input, Output
 import dash_bootstrap_components as dbc
 import paginas
@@ -23,7 +23,7 @@ app.layout = html.Div([
 
 @app.callback(
     Output('conteudo', 'children'),
-    [Input('url', 'pathname')]    
+    Input('url', 'pathname')
 )
 def mostrar_pagina(pathname):
     if pathname == '/formulario':
@@ -32,7 +32,5 @@ def mostrar_pagina(pathname):
         return paginas.graficos.layout
     else:
         return html.P('pagina inicial')
-
-
 
 app.run_server(debug=False, port=9090, host='0.0.0.0')
